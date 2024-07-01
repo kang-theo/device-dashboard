@@ -9,7 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace device_dashboard
+namespace device_dashboard.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
