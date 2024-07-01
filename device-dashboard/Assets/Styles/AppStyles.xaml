@@ -35,8 +35,8 @@
                                           HorizontalAlignment="Left"/>
                     </Grid>
                     <ControlTemplate.Triggers>
-                        <!--选中时状态高亮 -->
-                        <Trigger Property="IsChecked" Value="True">
+                            <!--选中时状态高亮 -->
+                            <Trigger Property="IsChecked" Value="True">
                             <Setter Property="Foreground" Value="#90BEE4"/>
                             <Setter TargetName="border" Property="BorderThickness" Value='1.5'/>
                             <Setter TargetName="border" Property="Background">
@@ -52,5 +52,82 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style>
+
+    <Style TargetType="GroupBox" x:Key="GroupBoxStyle">
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="GroupBox">
+                    <Border BorderBrush="#1FDCF5" BorderThickness="0.5" CornerRadius="10">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Border Height="8" VerticalAlignment="Top" Margin="0,-4,0,0">
+                                <Border.Background>
+                                    <RadialGradientBrush>
+                                        <GradientStop Color="#1FDCF5" Offset="0"/>
+                                        <GradientStop Color="Transparent" Offset="0.5"/>
+                                    </RadialGradientBrush>
+                                </Border.Background>
+                            </Border>
+                            <Border Height="8" Grid.Row="1" VerticalAlignment="Bottom" Margin="0,0,0,-3.5">
+                                <Border.Background>
+                                    <RadialGradientBrush>
+                                        <GradientStop Color="#1FDCF5" Offset="0"/>
+                                        <GradientStop Color="Transparent" Offset="0.5"/>
+                                    </RadialGradientBrush>
+                                </Border.Background>
+                            </Border>
+
+
+                            <Border Height="0.5" Background="#1FDCF5" VerticalAlignment="Bottom"/>
+
+                            <Ellipse Fill="Orange" Width="7" Height="7" 
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Left" Margin="10"/>
+
+
+                            <ContentPresenter ContentSource="Header"
+                                              TextBlock.Foreground="#1FDCF5"
+                                              VerticalAlignment="Center" Margin="25,0"
+                                              TextBlock.FontFamily="{StaticResource Dingding}"/>
+
+                            <ContentPresenter Grid.Row="1"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style TargetType="Button" x:Key="WarningButtonStyle">
+        <Setter Property="Background" Value="#7F00"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Path Data="M10 0 0 0 0 10" Stroke="#9F90" StrokeThickness="1"/>
+                        <Path Data="M0 0 10 0 10 10" Stroke="#9F90" StrokeThickness="1" HorizontalAlignment="Right"/>
+                        <Path Data="M0 0 0 10 10 10" Stroke="#9F90" StrokeThickness="1" VerticalAlignment="Bottom"/>
+                        <Path Data="M0 10 10 10 10 0" Stroke="#9F90" StrokeThickness="1" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+                        <Border Margin="3" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#9F00"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#6F00"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 </ResourceDictionary>

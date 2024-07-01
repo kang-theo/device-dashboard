@@ -78,6 +78,75 @@
                          Command="{Binding NavCommand}"
                          CommandParameter="4"/>
         </StackPanel>
+        
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center"
+                    HorizontalAlignment="Right">
+            <TextBlock Text="正常设备" VerticalAlignment="Center" Panel.ZIndex="10" 
+                       FontSize="12"
+                       FontFamily="{StaticResource Dingding}" 
+                       Foreground="#661FDCF5"/>
+            <Border Height="24" Width="70" BorderThickness="0,1" Margin="-20,0,0,0">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="Transparent" Offset="0"/>
+                        <GradientStop Color="#331FDCF5" Offset="0.5"/>
+                        <GradientStop Color="Transparent" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.BorderBrush>
+                    <RadialGradientBrush GradientOrigin="0.5,1" Center="0.5,1" RadiusX="0.8">
+                        <GradientStop Color="#1FDCF5" Offset="0"/>
+                        <GradientStop Color="Transparent" Offset="0.5"/>
+                    </RadialGradientBrush>
+                </Border.BorderBrush>
+
+                <TextBlock Text="128" FontFamily="{StaticResource Dingding}"
+                       VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="14"
+                       Foreground="#1FDCF5" Margin="0,0,15,0"/>
+            </Border>
+
+            <TextBlock Text="告警设备" VerticalAlignment="Center" FontSize="12"
+            FontFamily="{StaticResource Dingding}" Foreground="#661FDCF5"/>
+            <Border Height="24" Width="70" Margin="-20,0,5,0" BorderThickness="0,0,0,1">
+                <Border.BorderBrush>
+                    <RadialGradientBrush GradientOrigin="0.5,1" Center="0.5,1" RadiusX="0.8">
+                        <GradientStop Color="Yellow" Offset="0"/>
+                        <GradientStop Color="Transparent" Offset="0.5"/>
+                    </RadialGradientBrush>
+                </Border.BorderBrush>
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="Transparent" Offset="0"/>
+                        <GradientStop Color="#33FFFF00" Offset="0.5"/>
+                        <GradientStop Color="Transparent" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <TextBlock Text="15" FontFamily="{StaticResource Dingding}"
+               VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="14"
+               Foreground="Yellow" Margin="0,0,15,0"/>
+            </Border>
+
+            <TextBlock Text="故障设备" VerticalAlignment="Center" FontSize="12"
+            FontFamily="{StaticResource Dingding}" Foreground="#661FDCF5"/>
+            <Border Height="24" Width="70" Margin="-20,0,5,0" BorderThickness="0,0,0,1">
+                <Border.BorderBrush>
+                    <RadialGradientBrush GradientOrigin="0.5,1" Center="0.5,1" RadiusX="0.8">
+                        <GradientStop Color="#D14646" Offset="0"/>
+                        <GradientStop Color="Transparent" Offset="0.5"/>
+                    </RadialGradientBrush>
+                </Border.BorderBrush>
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="Transparent" Offset="0"/>
+                        <GradientStop Color="#33D14646" Offset="0.5"/>
+                        <GradientStop Color="Transparent" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <TextBlock Text="4" FontFamily="{StaticResource Dingding}"
+               VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="14"
+               Foreground="#D14646" Margin="0,0,15,0"/>
+            </Border>
+        </StackPanel>
 
     </Grid>
 </Window>
