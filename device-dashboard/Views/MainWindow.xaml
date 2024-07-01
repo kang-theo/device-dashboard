@@ -5,8 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:device_dashboard"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        WindowStartupLocation="CenterScreen" 
+        FontFamily="Microsoft YaHei" FontWeight="ExtraLight"
+        Title="MainWindow" Height="700" Width="1300">
+    <WindowChrome.WindowChrome>
+        <WindowChrome NonClientFrameEdges="None" GlassFrameThickness="15"
+                UseAeroCaptionButtons="False" CaptionHeight="60"/>
+    </WindowChrome.WindowChrome>
+    <Window.Background>
+         <RadialGradientBrush Center="1,0.1" GradientOrigin="1,0.1" RadiusX="0.9" RadiusY="0.9">
+            <GradientStop Color="#FF0F4D86" Offset="-1.5"/>
+            <GradientStop Color="#010C1D" Offset="2"/>
+        </RadialGradientBrush>
+    </Window.Background>
+    <Grid ClipToBounds="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
 
+        <!--第一行-->
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Left">
+            <Grid.RenderTransform>
+                <SkewTransform AngleX="-30"/>
+            </Grid.RenderTransform>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border Height="30" Width="345">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#FF1F3A69" Offset="0"/>
+                        <GradientStop Color="#0C192A" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+            <Border Width="13" Background="#101E34" Grid.Column="1" Margin="3,2"/>
+            <Border Width="13" Background="#101E34" Grid.Column="2" Margin="3,2"/>
+            <Border Width="13" Background="#101E34" Grid.Column="3" Margin="3,2"/>
+        </Grid>
+        <Ellipse Width="40" Height="40" VerticalAlignment="Center" Fill="#FF1F3A69"
+                     HorizontalAlignment="Left" Margin="10,0"/>
+        <Image Width="30" Height="30" Source="../Assets/Images/logo.png"
+               HorizontalAlignment="Left" Margin="15,0"/>
+        <TextBlock Text="生产车间设备监测中心" VerticalAlignment="Center" HorizontalAlignment="Left"
+           Margin="60,5,60,5" FontSize="18" Foreground="#1FDCF5"
+           FontWeight="Normal" FontFamily="{StaticResource Dingding}"/>
     </Grid>
 </Window>

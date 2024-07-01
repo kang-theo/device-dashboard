@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:device_dashboard"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
-         
+        <FontFamily x:Key="Dingding">./Assets/Fonts/#钉钉进步体 Regular</FontFamily>
     </Application.Resources>
 </Application>
