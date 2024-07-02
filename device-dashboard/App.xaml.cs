@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace device_dashboard.Views
+namespace device_dashboard
 {
     /// <summary>
     /// Interaction logic for App.xaml

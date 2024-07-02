@@ -11,6 +11,11 @@
 
   <ItemGroup>
     <None Remove="Assets\Fonts\DingTalk-JinBuTi.ttf" />
+    <None Remove="Assets\Images\Devices\d_1.png" />
+    <None Remove="Assets\Images\Devices\d_2.png" />
+    <None Remove="Assets\Images\Devices\d_3.png" />
+    <None Remove="Assets\Images\Devices\d_4.png" />
+    <None Remove="Assets\Images\Devices\d_5.png" />
     <None Remove="Assets\Images\Logo.png" />
   </ItemGroup>
 
@@ -22,6 +27,11 @@
 
   <ItemGroup>
     <Resource Include="Assets\Fonts\DingTalk-JinBuTi.ttf" />
+    <Resource Include="Assets\Images\Devices\d_1.png" />
+    <Resource Include="Assets\Images\Devices\d_2.png" />
+    <Resource Include="Assets\Images\Devices\d_3.png" />
+    <Resource Include="Assets\Images\Devices\d_4.png" />
+    <Resource Include="Assets\Images\Devices\d_5.png" />
     <Resource Include="Assets\Images\Logo.png" />
   </ItemGroup>
 

@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:device_dashboard"
+        xmlns:c="clr-namespace:device_dashboard.Components"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" 
         FontFamily="Microsoft YaHei" FontWeight="ExtraLight"
@@ -148,5 +149,15 @@
             </Border>
         </StackPanel>
 
+        <!--第二行-->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="220"/>
+            </Grid.ColumnDefinitions>
+            <!--第一列: device avatar-->
+            <c:DeviceBackground Source="../Assets/Images/Devices/d_1.png"/>
+        </Grid>
     </Grid>
 </Window>
