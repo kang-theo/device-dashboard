@@ -34,6 +34,7 @@ namespace device_dashboard.Components
             get { return (double)GetValue(ValueProperty); }
             set { SetValue(ValueProperty, value); }
         }
+        // 依赖属性，上面Value值变化时，执行回调
         public static readonly DependencyProperty ValueProperty =
             DependencyProperty.Register("Value", typeof(double), typeof(Meter),
                 new PropertyMetadata(0.0, new PropertyChangedCallback(OnValueChanged)));
@@ -50,6 +51,7 @@ namespace device_dashboard.Components
             double x2 = radius + radius * 0.6 * Math.Cos((current + this.start_angle) * Math.PI / 180);
             double y2 = radius + radius * 0.6 * Math.Sin((current + this.start_angle) * Math.PI / 180);
 
+            // Value值变化时回到函数执行到这里，更新Meter中path绘制圆弧的值，即刻度值
             int flag = this.Value > 82 ? 1 : 0;
             string data_str = $"M{x1} {y1} A{radius * 0.6} {radius * 0.6} 0 {flag} 1 {x2} {y2}";
             this.path_value.Data = PathGeometry.Parse(data_str);
@@ -112,7 +114,6 @@ namespace device_dashboard.Components
                 line.Y2 = y2;
                 this.canvas.Children.Add(line);
             }
-
 
             double px1 = radius + radius * 0.6 * Math.Cos(start_angle * Math.PI / 180);
             double py1 = radius + radius * 0.6 * Math.Sin(start_angle * Math.PI / 180);

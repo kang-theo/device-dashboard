@@ -478,8 +478,8 @@
                 </Grid>
             </GroupBox>
 
-            <GroupBox Header="异常报警" Grid.Column="2" Style="{StaticResource GroupBoxStyle}">
-                <c:Meter/>
+            <GroupBox Header="生产效率" Grid.Column="2" Style="{StaticResource GroupBoxStyle}">
+                <c:Meter Value="80"/>
             </GroupBox>
 
             <GroupBox Header="异常报警" Grid.Column="3" Style="{StaticResource GroupBoxStyle}">
