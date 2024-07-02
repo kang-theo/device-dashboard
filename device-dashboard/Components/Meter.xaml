@@ -12,9 +12,13 @@
         <Path Stroke="#32FFFFFF" StrokeThickness="5" Name="path_back"/>
         <Path Stroke="#1FDCF5" StrokeThickness="5" Name="path_value"/>
 
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock Text="Value" Foreground="black"/>
-            <TextBlock Text="Unit" Foreground="black"/>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"
+                    Margin="0,20,0,0">
+            <TextBlock Text="{Binding Value,RelativeSource={RelativeSource AncestorType=UserControl}}"
+                       Foreground="#1FDCF5" HorizontalAlignment="Center"
+                       FontSize="26" FontFamily="{StaticResource Dingding}"/>
+            <TextBlock Text="{Binding Unit,RelativeSource={RelativeSource AncestorType=UserControl}}" 
+                       Foreground="#3FFF"/>
         </StackPanel>
     </Grid>
 </UserControl>

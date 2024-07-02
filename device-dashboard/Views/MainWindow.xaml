@@ -479,7 +479,10 @@
             </GroupBox>
 
             <GroupBox Header="生产效率" Grid.Column="2" Style="{StaticResource GroupBoxStyle}">
-                <c:Meter Value="80"/>
+                <UniformGrid Columns="1" Margin="10">
+                    <c:Meter Margin="20,0" Value="28" Unit="件/分钟"/>
+                    <c:Meter Margin="20,0" Value="87" Unit="件/分钟"/>
+                </UniformGrid>
             </GroupBox>
 
             <GroupBox Header="异常报警" Grid.Column="3" Style="{StaticResource GroupBoxStyle}">
