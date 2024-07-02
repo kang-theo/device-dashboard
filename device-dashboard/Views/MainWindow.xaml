@@ -259,6 +259,23 @@
                                                 Foreground="#1FDCF5"/>
                                     </Grid>
                                 </Border>
+
+                                <Border Height="8" VerticalAlignment="Top" Margin="0,6.5,0,0" Grid.Row="1">
+                                    <Border.Background>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="#1FDCF5" Offset="0"/>
+                                            <GradientStop Color="Transparent" Offset="0.5"/>
+                                        </RadialGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                                <Border Height="8" Grid.Row="1" VerticalAlignment="Bottom" Margin="0,0,0,-3.5">
+                                    <Border.Background>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="#1FDCF5" Offset="0"/>
+                                            <GradientStop Color="Transparent" Offset="0.5"/>
+                                        </RadialGradientBrush>
+                                    </Border.Background>
+                                </Border>
                             </Grid>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
