@@ -355,5 +355,20 @@
                 </UniformGrid>
             </Grid>
         </Grid>
+
+        <!-- 第三行 -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/> <!-- 2倍宽度 -->
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Header="异常报警"/>
+            <GroupBox Header="异常报警" Grid.Column="1"/>
+            <GroupBox Header="异常报警" Grid.Column="2"/>
+            <GroupBox Header="异常报警" Grid.Column="3"/>
+        </Grid>
     </Grid>
 </Window>
