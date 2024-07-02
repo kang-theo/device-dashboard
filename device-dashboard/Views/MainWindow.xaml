@@ -160,7 +160,7 @@
             <c:DeviceBackground Source="../Assets/Images/Devices/d_1.png"/>
 
             <!--第二列-->
-            <Border BorderThickness="0,1" Grid.Column="1" Margin="0,20,0,30">
+            <Border BorderThickness="0,1" Grid.Column="1" Margin="0,10,0,10">
                 <Border.BorderBrush>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                         <GradientStop Color="#90BEE4" Offset="-3"/>
@@ -172,13 +172,29 @@
                 <ItemsControl ItemsSource="{Binding DeviceList}" Margin="0,10">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
+                            <!-- 在一行显示 -->
                             <UniformGrid Rows="1"/>
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <Grid>
-                                <TextBlock Text="{Binding Index}" Foreground="#661FDCF5"/>
+                                <Grid.RowDefinitions>
+                                    <!-- 根据 UI 布局， 分成两行 -->
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <!-- 该部分第一行 -->
+                                <StackPanel Margin="15,0">
+                                    <TextBlock Foreground="Orange" FontFamily="{StaticResource Dingding}">
+                                    <Run Text="NO-"/>
+                                    <Run Text="{Binding Index,StringFormat={}{0:00}}" FontSize="22"/>
+                                    </TextBlock>
+                                    <TextBlock Foreground="#991FDCF5" FontFamily="{StaticResource Dingding}">
+                                    <Run Text="设备运行正常"/>
+                                    <Ellipse Width="8" Height="8" Fill="#1FDCF5"/>
+                                    </TextBlock>
+                                </StackPanel>
                             </Grid>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
