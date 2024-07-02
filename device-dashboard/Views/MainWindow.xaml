@@ -302,6 +302,57 @@
                     <!--水晶球-->
                     <c:WaterProgress Value="54" HorizontalAlignment="Left" Margin="5"/>
                 </Border>
+
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Right" 
+                            Margin="25,0">
+                    <TextBlock Margin="0,5">
+                        <TextBlock Text="任务数量" Margin="5,0" Foreground="#999AC7DA" 
+                                   VerticalAlignment="Center"/>
+                        <TextBlock Text="485" Foreground="#1FDCF5" FontFamily="{StaticResource Dingding}"
+                                   FontSize="14"/>
+                    </TextBlock>
+                    <StackPanel Orientation="Horizontal" Margin="0,5">
+                        <TextBlock Text="任务占比" Margin="5,0" Foreground="#999AC7DA" VerticalAlignment="Center"/>
+                        <TextBlock Text="54%" Foreground="#1FDCF5" FontFamily="{StaticResource Dingding}"
+                                   FontSize="14"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- 均分 2 行 2 列 -->
+                <UniformGrid Grid.Row="1">
+                    <Border BorderBrush="#2FFF" BorderThickness="0,0,1,1">
+                        <StackPanel VerticalAlignment="Center" Margin="3,0">
+                            <TextBlock Text="运行时长" Foreground="#559AC7DA" 
+                                       FontFamily="{StaticResource Dingding}"/>
+                            <TextBlock Text="1,234.567" Margin="0,5" FontSize="16" 
+                                       FontWeight="Bold"
+                                       Foreground="#1FDCF5" FontFamily="{StaticResource Dingding}"/>
+                            <TextBlock Text="+12.00%" Foreground="#999AC7DA" FontSize="10"/>
+                        </StackPanel>
+                    </Border>
+                    <Border BorderBrush="#2FFF" BorderThickness="0,0,0,1">
+                        <StackPanel VerticalAlignment="Center" Margin="3,0">
+                            <TextBlock Text="累计产量" Foreground="#559AC7DA" FontFamily="{StaticResource Dingding}"/>
+                            <TextBlock Text="1,234.567" Margin="0,5" FontSize="16" FontWeight="Bold"
+                                       Foreground="#1FDCF5" FontFamily="{StaticResource Dingding}"/>
+                            <TextBlock Text="+12.00%" Foreground="#999AC7DA" FontSize="10"/>
+                        </StackPanel>
+                    </Border>
+                    <Border BorderBrush="#2FFF" BorderThickness="0,0,1,0">
+                        <StackPanel VerticalAlignment="Center" Margin="3,0">
+                            <TextBlock Text="故障停机" Foreground="#559AC7DA" FontFamily="{StaticResource Dingding}"/>
+                            <TextBlock Text="34.5" Margin="0,5" FontSize="16" FontWeight="Bold"
+                                       Foreground="#1FDCF5" FontFamily="{StaticResource Dingding}"/>
+                            <TextBlock Text="-12.00%" Foreground="#999AC7DA" FontSize="10"/>
+                        </StackPanel>
+                    </Border>
+                    <StackPanel VerticalAlignment="Center" Margin="3,0">
+                        <TextBlock Text="运行时长" Foreground="#559AC7DA" FontFamily="{StaticResource Dingding}"/>
+                        <TextBlock Text="1,234.567" Margin="0,5" FontSize="16" FontWeight="Bold"
+                                   Foreground="#1FDCF5" FontFamily="{StaticResource Dingding}"/>
+                        <TextBlock Text="+12.00%" Foreground="#999AC7DA" FontSize="10"/>
+                    </StackPanel>
+                </UniformGrid>
             </Grid>
         </Grid>
     </Grid>
