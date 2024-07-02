@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="device_dashboard.Components.Meter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:device_dashboard.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <!--放刻度信息-->
+        <Canvas Name="canvas"/>
+        <Path Stroke="#32FFFFFF" StrokeThickness="5" Name="path_back"/>
+        <Path Stroke="#1FDCF5" StrokeThickness="5" Name="path_value"/>
+
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Value" Foreground="black"/>
+            <TextBlock Text="Unit" Foreground="black"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

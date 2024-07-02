@@ -479,7 +479,7 @@
             </GroupBox>
 
             <GroupBox Header="异常报警" Grid.Column="2" Style="{StaticResource GroupBoxStyle}">
-
+                <c:Meter/>
             </GroupBox>
 
             <GroupBox Header="异常报警" Grid.Column="3" Style="{StaticResource GroupBoxStyle}">
