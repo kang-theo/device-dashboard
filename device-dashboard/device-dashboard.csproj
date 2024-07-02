@@ -20,6 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Assets\Fonts\DingTalk-JinBuTi.ttf" />
     <Resource Include="Assets\Images\Devices\d_1.png" />
     <Resource Include="Assets\Images\Devices\d_2.png" />

@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:device_dashboard"
         xmlns:c="clr-namespace:device_dashboard.Components"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" 
         FontFamily="Microsoft YaHei" FontWeight="ExtraLight"
@@ -366,14 +367,121 @@
             </Grid.ColumnDefinitions>
 
             <GroupBox Header="异常报警" Style="{StaticResource GroupBoxStyle}">
+                <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                    <ItemsControl ItemsSource="{Binding AlarmList}" Margin="5,10">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Height="30" Background="Transparent" Name="grid">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20"/>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="{Binding Index,StringFormat={}{0:00}}" 
+                                            Foreground="#9FFF" 
+                                            VerticalAlignment="Center" 
+                                            HorizontalAlignment="Center"
+                                            FontFamily="{StaticResource Dingding}"/>
 
+                                    <TextBlock Text="11-22 20:00" Foreground="#5FFF" 
+                                            VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                            Grid.Column="1" Margin="10,0"/>
+                                    <TextBlock Text="加工中心故障" Foreground="#9FFF" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="2"/>
+                                    <TextBlock Text="紧急" Foreground="Red" VerticalAlignment="Center" 
+                                            HorizontalAlignment="Center" Grid.Column="3"
+                                            FontWeight="Normal"/>
+                                </Grid>
+                                <!-- 鼠标 hover 效果 -->
+                                <DataTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="grid" Property="Background" Value="#2FFF"/>
+                                    </Trigger>
+                                </DataTemplate.Triggers>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
             </GroupBox>
-            <GroupBox Header="异常报警" Grid.Column="1" Style="{StaticResource GroupBoxStyle}">
 
+            <GroupBox Header="能效数据" Grid.Column="1" Style="{StaticResource GroupBoxStyle}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="1.5*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <UniformGrid Rows="1" 
+                                 TextBlock.FontFamily="{StaticResource Dingding}" 
+                                 Margin="15,0,10,0">
+                        <StackPanel Margin="0,5">
+                            <TextBlock Text="68" Foreground="IndianRed" HorizontalAlignment="Center" Margin="0,5"/>
+                            <TextBlock Text="能效指数" Foreground="#AFFF" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,5">
+                            <TextBlock Text="15.3%" Foreground="OrangeRed" HorizontalAlignment="Center" Margin="0,5"/>
+                            <TextBlock Text="水" Foreground="#5FFF" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,5">
+                            <TextBlock Text="44.7%" Foreground="LightSteelBlue" HorizontalAlignment="Center" Margin="0,5"/>
+                            <TextBlock Text="电" Foreground="#5FFF" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,5">
+                            <TextBlock Text="30%" Foreground="LightSeaGreen" HorizontalAlignment="Center" Margin="0,5"/>
+                            <TextBlock Text="气" Foreground="#5FFF" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </UniformGrid>
+
+                    <!-- liveCharts Pie Chart -->
+                    <lvc:PieChart Grid.Row="1" InnerRadius="40" Margin="15"
+                                  StartingRotationAngle="0">
+                        <lvc:PieChart.Series>
+                            <lvc:PieSeries Values="0.18" StrokeThickness="0" Fill="#2195F2"/>
+                            <lvc:PieSeries Values="0.17" StrokeThickness="0" Fill="#F34336"/>
+                            <lvc:PieSeries Values="0.04" StrokeThickness="0" Fill="#FEC007"/>
+                            <lvc:PieSeries Values="0.26" StrokeThickness="0" Fill="#607D8A"/>
+                            <lvc:PieSeries Values="0.08" StrokeThickness="0" Fill="#01A4BC"/>
+                            <lvc:PieSeries Values="0.27" StrokeThickness="0" Fill="#5EC1A6"/>
+                        </lvc:PieChart.Series>
+                    </lvc:PieChart>
+                    <TextBlock Text="能耗占比" FontSize="12" Grid.Row="1"
+                               VerticalAlignment="Center" 
+                               HorizontalAlignment="Center" 
+                                       Foreground="#1FDCF5" FontFamily="{StaticResource Dingding}"/>
+
+                    <UniformGrid Columns="2" Grid.Row="2" Margin="0,10">
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Ellipse Width="8" Height="8" Fill="#2195F2"/>
+                            <Run Text="车间设备-11" Foreground="#5FFF"/>
+                        </TextBlock>
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Ellipse Width="8" Height="8" Fill="#F34336"/>
+                            <Run Text="车间设备-12" Foreground="#5FFF"/>
+                        </TextBlock>
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Ellipse Width="8" Height="8" Fill="#FEC007"/>
+                            <Run Text="车间设备-13" Foreground="#5FFF"/>
+                        </TextBlock>
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Ellipse Width="8" Height="8" Fill="#607D8A"/>
+                            <Run Text="车间设备-14" Foreground="#5FFF"/>
+                        </TextBlock>
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Ellipse Width="8" Height="8" Fill="#01A4BC"/>
+                            <Run Text="车间设备-15" Foreground="#5FFF"/>
+                        </TextBlock>
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Ellipse Width="8" Height="8" Fill="#5EC1A6"/>
+                            <Run Text="车间设备-16" Foreground="#5FFF"/>
+                        </TextBlock>
+                    </UniformGrid>
+                </Grid>
             </GroupBox>
+
             <GroupBox Header="异常报警" Grid.Column="2" Style="{StaticResource GroupBoxStyle}">
 
             </GroupBox>
+
             <GroupBox Header="异常报警" Grid.Column="3" Style="{StaticResource GroupBoxStyle}">
 
             </GroupBox>
