@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using device_dashboard.ViewModels;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,8 @@ namespace device_dashboard.Views
         public MainWindow()
         {
             InitializeComponent();
+
+            this.DataContext = new MainViewModel();
         }
     }
 }

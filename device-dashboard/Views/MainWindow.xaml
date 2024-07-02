@@ -158,6 +158,20 @@
             </Grid.ColumnDefinitions>
             <!--第一列: device avatar-->
             <c:DeviceBackground Source="../Assets/Images/Devices/d_1.png"/>
+
+            <!--第二列-->
+            <Border BorderThickness="0,1" Grid.Column="1" Margin="0,20,0,30">
+                <Border.BorderBrush>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#90BEE4" Offset="-3"/>
+                        <GradientStop Color="Transparent" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+
+                <!--ListView  ListBox  DataGrid-->
+                <ItemsControl ItemsSource="{Binding DeviceList}" Margin="0,10">
+                </ItemsControl>
+            </Border>
         </Grid>
     </Grid>
 </Window>
