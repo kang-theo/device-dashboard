@@ -170,6 +170,18 @@
 
                 <!--ListView  ListBox  DataGrid-->
                 <ItemsControl ItemsSource="{Binding DeviceList}" Margin="0,10">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Rows="1"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <TextBlock Text="{Binding Index}" Foreground="#661FDCF5"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
                 </ItemsControl>
             </Border>
         </Grid>
