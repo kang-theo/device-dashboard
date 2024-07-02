@@ -15,7 +15,7 @@
                 UseAeroCaptionButtons="False" CaptionHeight="60"/>
     </WindowChrome.WindowChrome>
     <Window.Background>
-         <RadialGradientBrush Center="1,0.1" GradientOrigin="1,0.1" RadiusX="0.9" RadiusY="0.9">
+        <RadialGradientBrush Center="1,0.1" GradientOrigin="1,0.1" RadiusX="0.9" RadiusY="0.9">
             <GradientStop Color="#FF0F4D86" Offset="-1.5"/>
             <GradientStop Color="#010C1D" Offset="2"/>
         </RadialGradientBrush>
@@ -23,7 +23,7 @@
     <Window.Resources>
         <ResourceDictionary Source="../Assets/Styles/AppStyles.xaml"/>
     </Window.Resources>
-    
+
     <Grid ClipToBounds="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -80,7 +80,7 @@
                          Command="{Binding NavCommand}"
                          CommandParameter="4"/>
         </StackPanel>
-        
+
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center"
                     HorizontalAlignment="Right">
             <TextBlock Text="正常设备" VerticalAlignment="Center" Panel.ZIndex="10" 
@@ -363,7 +363,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="2*"/> <!-- 2倍宽度 -->
+                <ColumnDefinition Width="2*"/>
+                <!-- 2倍宽度 -->
             </Grid.ColumnDefinitions>
 
             <GroupBox Header="异常报警" Style="{StaticResource GroupBoxStyle}">
@@ -485,8 +486,63 @@
                 </UniformGrid>
             </GroupBox>
 
-            <GroupBox Header="异常报警" Grid.Column="3" Style="{StaticResource GroupBoxStyle}">
-
+            <GroupBox Header="产量统计" Grid.Column="3" Style="{StaticResource GroupBoxStyle}">
+                <UniformGrid Columns="1">
+                    <lvc:CartesianChart Margin="20,20,20,20">
+                        <lvc:CartesianChart.Series>
+                            <lvc:LineSeries Values="46,20,30,56,57,33,76,54,74,65,66,24,71,77,58,69,68,50,51,53"
+                                            PointGeometrySize="0" Stroke="#1FDCF5" StrokeThickness="1">
+                                <lvc:LineSeries.Fill>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#331FDCF5" Offset="0"/>
+                                        <GradientStop Color="Transparent" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </lvc:LineSeries.Fill>
+                            </lvc:LineSeries>
+                        </lvc:CartesianChart.Series>
+                        <lvc:CartesianChart.AxisX>
+                            <lvc:Axis Labels="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20">
+                                <lvc:Axis.Separator>
+                                    <lvc:Separator Step="1" StrokeThickness="0"/>
+                                </lvc:Axis.Separator>
+                            </lvc:Axis>
+                        </lvc:CartesianChart.AxisX>
+                        <lvc:CartesianChart.AxisY>
+                            <lvc:Axis MinValue="0" MaxValue="100">
+                                <lvc:Axis.Separator>
+                                    <lvc:Separator Step="25" Stroke="#2FFF"/>
+                                </lvc:Axis.Separator>
+                            </lvc:Axis>
+                        </lvc:CartesianChart.AxisY>
+                    </lvc:CartesianChart>
+                    <lvc:CartesianChart Margin="20">
+                        <lvc:CartesianChart.Series>
+                            <lvc:LineSeries Values="38,70,57,62,67,27,75,56,79,20,77,46,33,63,49,58,65,50,26,69"
+                        PointGeometrySize="0" Stroke="Orange" StrokeThickness="1">
+                                <lvc:LineSeries.Fill>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#33FF9900" Offset="0"/>
+                                        <GradientStop Color="Transparent" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </lvc:LineSeries.Fill>
+                            </lvc:LineSeries>
+                        </lvc:CartesianChart.Series>
+                        <lvc:CartesianChart.AxisX>
+                            <lvc:Axis Labels="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20">
+                                <lvc:Axis.Separator>
+                                    <lvc:Separator Step="1" StrokeThickness="0"/>
+                                </lvc:Axis.Separator>
+                            </lvc:Axis>
+                        </lvc:CartesianChart.AxisX>
+                        <lvc:CartesianChart.AxisY>
+                            <lvc:Axis MinValue="0" MaxValue="100">
+                                <lvc:Axis.Separator>
+                                    <lvc:Separator Step="25" Stroke="#2FFF"/>
+                                </lvc:Axis.Separator>
+                            </lvc:Axis>
+                        </lvc:CartesianChart.AxisY>
+                    </lvc:CartesianChart>
+                </UniformGrid>
             </GroupBox>
         </Grid>
     </Grid>
