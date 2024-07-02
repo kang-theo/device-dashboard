@@ -178,7 +178,7 @@
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Grid>
+                            <Grid Margin="5,0">
                                 <Grid.RowDefinitions>
                                     <!-- 根据 UI 布局， 分成两行 -->
                                     <RowDefinition Height="auto"/>
@@ -195,6 +195,70 @@
                                     <Ellipse Width="8" Height="8" Fill="#1FDCF5"/>
                                     </TextBlock>
                                 </StackPanel>
+
+                                <!-- 该部分第二行，再分成 6 行 3 列 -->
+                                <Border BorderBrush="#2FFF" BorderThickness="1" Grid.Row="1" 
+                                        Margin="0,10,0,0" CornerRadius="10">
+                                    <Grid TextBlock.Foreground="#4FFF">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="80"/>
+                                            <ColumnDefinition />
+                                            <ColumnDefinition Width="40"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Text="工作模式" VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center"/>
+                                        <TextBlock Text="AUTO" Grid.Column="1" VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center"
+                                                FontFamily="{StaticResource Dingding}" 
+                                                Foreground="#1FDCF5"/>
+
+                                        <TextBlock Text="进给倍率" VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center" Grid.Row="1"/>
+                                        <TextBlock Text="0" Grid.Column="1" VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center" Grid.Row="1"
+                                                FontFamily="{StaticResource Dingding}" 
+                                                Foreground="#1FDCF5"/>
+
+                                        <TextBlock Text="主轴转速" VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center" Grid.Row="2"/>
+                                        <TextBlock Text="0" Grid.Column="1" VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center" Grid.Row="2"
+                                                FontFamily="{StaticResource Dingding}" 
+                                                Foreground="#1FDCF5"/>
+
+                                        <TextBlock Text="主轴负载" VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center" Grid.Row="3"/>
+                                        <TextBlock Text="AUTO" Grid.Column="1" VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center"  Grid.Row="3"
+                                                FontFamily="{StaticResource Dingding}" 
+                                                Foreground="#1FDCF5"/>
+                                        <TextBlock Text="r/m" Grid.Column="2" VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center" Grid.Row="3"/>
+
+                                        <TextBlock Text="程序编号" VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center"  Grid.Row="4"/>
+                                        <TextBlock Text="AUTO" Grid.Column="1" VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center"  Grid.Row="4"
+                                                FontFamily="{StaticResource Dingding}" 
+                                                Foreground="#1FDCF5"/>
+
+                                        <TextBlock Text="程序编号" VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center"  Grid.Row="5"/>
+                                        <TextBlock Text="AUTO" Grid.Column="1" VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center"  Grid.Row="5"
+                                                FontFamily="{StaticResource Dingding}" 
+                                                Foreground="#1FDCF5"/>
+                                    </Grid>
+                                </Border>
                             </Grid>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
