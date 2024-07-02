@@ -20,10 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Components\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="Assets\Fonts\DingTalk-JinBuTi.ttf" />
     <Resource Include="Assets\Images\Devices\d_1.png" />
     <Resource Include="Assets\Images\Devices\d_2.png" />
