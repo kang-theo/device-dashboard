@@ -54,6 +54,7 @@
         </Setter>
     </Style>
 
+    <!-- GroupBox style -->
     <Style TargetType="GroupBox" x:Key="GroupBoxStyle">
         <Setter Property="Margin" Value="10"/>
         <Setter Property="Template">
