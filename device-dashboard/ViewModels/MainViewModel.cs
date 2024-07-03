@@ -11,7 +11,7 @@ namespace device_dashboard.ViewModels
 {
     public class MainViewModel : ObservableObject
     {
-        // 基本信息池
+        // 基本信息池 (data pool)
         public List<DeviceGroupModel> DeviceGroup { get; set; } =
             new List<DeviceGroupModel>();
 
@@ -116,6 +116,7 @@ namespace device_dashboard.ViewModels
                     new DeviceItemModel()
                     {
                         Index=13,
+                        IsWarning=true,
                         // 设备中有多少监测变量
                         VariableList=new List<VariableModel>{
                             new VariableModel{
@@ -637,6 +638,7 @@ namespace device_dashboard.ViewModels
                     new DeviceItemModel()
                     {
                         Index=52,
+                        IsWarning=true,
                         // 设备中有多少监测变量
                         VariableList=new List<VariableModel>{
                             new VariableModel{

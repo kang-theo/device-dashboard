@@ -252,9 +252,79 @@
                                     </Border>
                                 </Grid>
                                 <!--异常情况显示报警-->
-                                <Grid Name="warning" Visibility="Collapsed">
-                                    <TextBlock Text="正在报警" Foreground="Orange" FontSize="30"/>
+                                <Border Grid.RowSpan="2" Background="#6F00" Name="warning" Visibility="Collapsed">
+                                <Grid ClipToBounds="True">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="15"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Margin="0,-15">
+                                        <Border.RenderTransform>
+                                            <SkewTransform AngleY="-35"/>
+                                        </Border.RenderTransform>
+                                        <Border.Background>
+                                            <VisualBrush TileMode="Tile" Viewport="0,0,20,30" ViewportUnits="Absolute">
+                                                <VisualBrush.Visual>
+                                                    <Border Height="30" Width="20" Background="Transparent" BorderThickness="0,0,0,10" 
+                                BorderBrush="Orange" Margin="0,-20" Opacity="0.5">
+                                                    </Border>
+
+                                                </VisualBrush.Visual>
+                                            </VisualBrush>
+                                        </Border.Background>
+                                    </Border>
+                                    <Border Margin="0,-15" Grid.Column="2">
+                                        <Border.RenderTransform>
+                                            <SkewTransform AngleY="-35"/>
+                                        </Border.RenderTransform>
+                                        <Border.Background>
+                                            <VisualBrush TileMode="Tile" Viewport="0,0,20,30" ViewportUnits="Absolute">
+                                                <VisualBrush.Visual>
+                                                    <Border Height="30" Width="20" Background="Transparent" BorderThickness="0,0,0,10" 
+                                BorderBrush="Orange" Margin="0,-20" Opacity="0.5">
+                                                    </Border>
+
+                                                </VisualBrush.Visual>
+                                            </VisualBrush>
+                                        </Border.Background>
+                                    </Border>
+
+                                    <Grid Grid.Column="1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <StackPanel Panel.ZIndex="10" Margin="20,0">
+                                            <TextBlock Foreground="Orange" FontFamily="{StaticResource Dingding}">
+                    <Run Text="NO-"/>
+                    <Run Text="{Binding Index,StringFormat={}{0:00}}" FontSize="22"/>
+                                            </TextBlock>
+                                            <TextBlock Foreground="#9FFF" Margin="0,5" FontFamily="{StaticResource Dingding}">
+                    <Run Text="故障代码"/>
+                    <Run Text="03"/>
+                                            </TextBlock>
+                                        </StackPanel>
+                                        <Path Data="M933.17802667 805.60128c-0.58254222-1.16508445-0.58254222-2.33016889-1.16508445-3.49525333L562.68117333 163.05720889c0-0.58254222-0.58254222-0.58254222-0.58254222-1.16508444-0.58254222-1.16508445-18.64135111-26.2144-48.93354666-26.2144-29.70965333 0-50.09863111 23.88423111-50.68117334 25.04931555-0.58254222 0.58254222-1.16508445 1.16508445-1.16508444 1.74762667l-367.0016 636.13610666c-0.58254222 0.58254222-0.58254222 1.16508445-1.16508445 2.33016889-1.16508445 3.49525333-11.06830222 33.78744889 3.49525333 57.08913778 14.56355555 23.88423111 45.43829333 29.70965333 48.93354667 30.29219555h728.17777778c1.16508445 0 33.20490667-2.91271111 50.68117333-26.2144 17.47626667-23.30168889 9.32067555-54.75896889 8.73813334-56.50659555zM482.29034667 369.85969778c0-16.31118222 13.39847111-29.70965333 29.70965333-29.70965333s29.70965333 13.39847111 29.70965333 29.70965333v246.41536c0 16.31118222-13.39847111 29.70965333-29.70965333 29.70965333s-29.70965333-13.39847111-29.70965333-29.70965333V369.85969778zM512 791.03772445c-26.2144 0-47.76846222-21.55406222-47.76846222-47.76846223S485.7856 695.5008 512 695.5008s47.76846222 21.55406222 47.76846222 47.76846222S538.2144 791.03772445 512 791.03772445z"
+                  Fill="#FF3715" Width="30" Height="30" Stretch="Uniform"
+                  VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10,0"/>
+
+                                        <Border Grid.Row="1" BorderBrush="Orange" BorderThickness="0,0,0,1" Margin="0,20"
+                    HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                                            <Border.RenderTransform>
+                                                <ScaleTransform ScaleX="0.7"/>
+                                            </Border.RenderTransform>
+                                            <TextBlock Text="WARNING" FontFamily="{StaticResource Dingding}" Grid.Row="1"
+                       FontSize="28" Foreground="Orange"/>
+                                        </Border>
+
+                                        <Button Grid.Row="2" Content="查看故障" FontFamily="{StaticResource Dingding}" Height="36"
+                    Margin="18,0" Foreground="Orange" Style="{StaticResource WarningButtonStyle}"/>
+                                    </Grid>
                                 </Grid>
+
+                            </Border>
                             </Grid>
                             <!-- 报警触发器 -->
                             <DataTemplate.Triggers>
