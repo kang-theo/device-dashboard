@@ -773,11 +773,17 @@ namespace device_dashboard.ViewModels
                     for (int i = 0; i < 4; i++)
                     {
                         var item = list[i];
+                        item.IsWarning = false;
 
                         for (int j = 0; j < item.VariableList.Count; j++)
                         {
                             item.VariableList[j].Value = values[i * 6 + j];
                         }
+
+                        // 判断当前设备的主轴转速不能低于50
+                        // 因为没有连接设备建立PLC通信，所以这里实际上走不到
+                        if ((ushort)item.VariableList[2].Value < 50)
+                            item.IsWarning = true;
                     }
 
                     await Task.Delay(1000);

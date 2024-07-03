@@ -182,73 +182,87 @@
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Grid Margin="5,0">
-                                <Grid.RowDefinitions>
-                                    <!-- 根据 UI 布局， 分成两行 -->
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
-                                <!-- 该部分第一行 -->
-                                <StackPanel Margin="15,0">
-                                    <TextBlock Foreground="Orange" FontFamily="{StaticResource Dingding}">
-                                    <Run Text="NO-"/>
-                                    <Run Text="{Binding Index,StringFormat={}{0:00}}" FontSize="22"/>
-                                    </TextBlock>
-                                    <TextBlock Foreground="#991FDCF5" FontFamily="{StaticResource Dingding}">
-                                    <Run Text="设备运行正常"/>
-                                    <Ellipse Width="8" Height="8" Fill="#1FDCF5"/>
-                                    </TextBlock>
-                                </StackPanel>
+                            <Grid>
+                                <!--正常情况显示数据-->
+                                <Grid Name="normal" Margin="5,0">
+                                    <Grid.RowDefinitions>
+                                        <!-- 根据 UI 布局， 分成两行 -->
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <!-- 该部分第一行 -->
+                                    <StackPanel Margin="15,0">
+                                        <TextBlock Foreground="Orange" FontFamily="{StaticResource Dingding}">
+                                        <Run Text="NO-"/>
+                                        <Run Text="{Binding Index,StringFormat={}{0:00}}" FontSize="22"/>
+                                        </TextBlock>
+                                        <TextBlock Foreground="#991FDCF5" FontFamily="{StaticResource Dingding}">
+                                        <Run Text="设备运行正常"/>
+                                        <Ellipse Width="8" Height="8" Fill="#1FDCF5"/>
+                                        </TextBlock>
+                                    </StackPanel>
 
-                                <!-- 该部分第二行，再分成 6 行 3 列 -->
-                                <Border BorderBrush="#2FFF" BorderThickness="1" Grid.Row="1" 
-                                        Margin="0,10,0,0" CornerRadius="10">
-                                    <ItemsControl ItemsSource="{Binding VariableList}"
-                                                  TextBlock.Foreground="#4FFF">
-                                        <ItemsControl.ItemsPanel>
-                                            <ItemsPanelTemplate>
-                                                <UniformGrid Columns="1"/>
-                                            </ItemsPanelTemplate>
-                                        </ItemsControl.ItemsPanel>
-                                        <ItemsControl.ItemTemplate>
-                                            <DataTemplate>
-                                                <Grid>
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="80"/>
-                                                        <ColumnDefinition />
-                                                        <ColumnDefinition Width="40"/>
-                                                    </Grid.ColumnDefinitions>
-                                                    <TextBlock Text="{Binding Name}" VerticalAlignment="Center" 
-                                                                HorizontalAlignment="Center"/>
-                                                    <TextBlock Text="{Binding Value}" Grid.Column="1" VerticalAlignment="Center" 
-                                                               HorizontalAlignment="Center"
-                                                               FontFamily="{StaticResource Dingding}" 
-                                                               Foreground="#1FDCF5"/>
-                                                    <TextBlock Text="{Binding Unit}" Grid.Column="2" VerticalAlignment="Center" 
-                                                                 HorizontalAlignment="Center" Grid.Row="3"/>
-                                                </Grid>
-                                            </DataTemplate>
-                                        </ItemsControl.ItemTemplate>
-                                    </ItemsControl>
-                                </Border>
+                                    <!-- 该部分第二行，再分成 6 行 3 列 -->
+                                    <Border BorderBrush="#2FFF" BorderThickness="1" Grid.Row="1" 
+                                            Margin="0,10,0,0" CornerRadius="10">
+                                        <ItemsControl ItemsSource="{Binding VariableList}"
+                                                      TextBlock.Foreground="#4FFF">
+                                            <ItemsControl.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <UniformGrid Columns="1"/>
+                                                </ItemsPanelTemplate>
+                                            </ItemsControl.ItemsPanel>
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="80"/>
+                                                            <ColumnDefinition />
+                                                            <ColumnDefinition Width="40"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <TextBlock Text="{Binding Name}" VerticalAlignment="Center" 
+                                                                    HorizontalAlignment="Center"/>
+                                                        <TextBlock Text="{Binding Value}" Grid.Column="1" VerticalAlignment="Center" 
+                                                                   HorizontalAlignment="Center"
+                                                                   FontFamily="{StaticResource Dingding}" 
+                                                                   Foreground="#1FDCF5"/>
+                                                        <TextBlock Text="{Binding Unit}" Grid.Column="2" VerticalAlignment="Center" 
+                                                                     HorizontalAlignment="Center" Grid.Row="3"/>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </Border>
 
-                                <Border Height="8" VerticalAlignment="Top" Margin="0,6.5,0,0" Grid.Row="1">
-                                    <Border.Background>
-                                        <RadialGradientBrush>
-                                            <GradientStop Color="#1FDCF5" Offset="0"/>
-                                            <GradientStop Color="Transparent" Offset="0.5"/>
-                                        </RadialGradientBrush>
-                                    </Border.Background>
-                                </Border>
-                                <Border Height="8" Grid.Row="1" VerticalAlignment="Bottom" Margin="0,0,0,-3.5">
-                                    <Border.Background>
-                                        <RadialGradientBrush>
-                                            <GradientStop Color="#1FDCF5" Offset="0"/>
-                                            <GradientStop Color="Transparent" Offset="0.5"/>
-                                        </RadialGradientBrush>
-                                    </Border.Background>
-                                </Border>
+                                    <Border Height="8" VerticalAlignment="Top" Margin="0,6.5,0,0" Grid.Row="1">
+                                        <Border.Background>
+                                            <RadialGradientBrush>
+                                                <GradientStop Color="#1FDCF5" Offset="0"/>
+                                                <GradientStop Color="Transparent" Offset="0.5"/>
+                                            </RadialGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                    <Border Height="8" Grid.Row="1" VerticalAlignment="Bottom" Margin="0,0,0,-3.5">
+                                        <Border.Background>
+                                            <RadialGradientBrush>
+                                                <GradientStop Color="#1FDCF5" Offset="0"/>
+                                                <GradientStop Color="Transparent" Offset="0.5"/>
+                                            </RadialGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                </Grid>
+                                <!--异常情况显示报警-->
+                                <Grid Name="warning" Visibility="Collapsed">
+                                    <TextBlock Text="正在报警" Foreground="Orange" FontSize="30"/>
+                                </Grid>
                             </Grid>
+                            <!-- 报警触发器 -->
+                            <DataTemplate.Triggers>
+                                <DataTrigger Binding="{Binding IsWarning}" Value="True">
+                                    <Setter TargetName="normal" Property="Visibility" Value="Collapsed"/>
+                                    <Setter TargetName="warning" Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </DataTemplate.Triggers>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
