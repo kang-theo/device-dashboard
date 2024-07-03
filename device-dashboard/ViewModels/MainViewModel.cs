@@ -736,6 +736,10 @@ namespace device_dashboard.ViewModels
             }
 
             NavCommand = new RelayCommand<object>(OnNavigation);
+            OnNavigation("0");
+
+            // 启动监听设备信息，PLC通信
+            StartMonitor();
         }
 
         // 委托
@@ -750,5 +754,37 @@ namespace device_dashboard.ViewModels
             this.OnPropertyChanged(nameof(DeviceList));
         }
 
+        CancellationTokenSource cts = new CancellationTokenSource();
+        private void StartMonitor()
+        {
+            Task.Run(async () =>
+            {
+                // PLC通信，建立连接
+                S7.Net.Plc plc = new S7.Net.Plc(S7.Net.CpuType.S7200Smart, "192.168.2.1", 0, 0);
+                plc.Open();
+
+                // 采集设备数据到 data pool
+                var list = DeviceGroup[0].DeviceList;
+                while (!cts.IsCancellationRequested)
+                {
+                    ushort[] values = (ushort[])plc.Read(S7.Net.DataType.DataBlock, 1, 100, S7.Net.VarType.Word, 24);
+                    // 0 0 0 0 0 0    0 0 0 0 0 0
+                    // 报警条件：
+                    for (int i = 0; i < 4; i++)
+                    {
+                        var item = list[i];
+
+                        for (int j = 0; j < item.VariableList.Count; j++)
+                        {
+                            item.VariableList[j].Value = values[i * 6 + j];
+                        }
+                    }
+
+                    await Task.Delay(1000);
+                }
+
+                plc.Close();
+            }, cts.Token);
+        }
     }
 }

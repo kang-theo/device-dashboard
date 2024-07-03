@@ -5,7 +5,8 @@
 ### NuGet Packages
 
 - liveCharts.wpf
-- CommunityToolkit.MvvM
+- CommunityToolkit.Mvvm
+- S7netplus
 
 ## UI
 
