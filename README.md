@@ -12,6 +12,8 @@
 
 ![UI](./device-dashboard/Public/ui.jpg)
 
+![Warning](./device-dashboard/Public/warning.jpg)
+
 ### Breakdown
 
 ![UI breakdown](./device-dashboard/Public/ui-2.jpg)
@@ -24,3 +26,4 @@
 ![Device Info Pool Data Structure](./device-dashboard/Public/device-info-pool.jpg)
 
 ### Production Statistics
+PLC communication: A monitor thread to collect device data and store in data pool.
