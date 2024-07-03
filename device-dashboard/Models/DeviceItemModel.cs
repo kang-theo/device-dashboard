@@ -9,6 +9,8 @@ namespace device_dashboard.Models
     public class DeviceItemModel
     {
         public int Index { get; set; }
-        private bool _isWarning;
+        private bool _isWarning {  get; set; }
+
+        public List<VariableModel> VariableList { get; set; }
     }
 }

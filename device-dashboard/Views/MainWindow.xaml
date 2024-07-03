@@ -64,6 +64,7 @@
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center"
                     HorizontalAlignment="Left" Margin="395,0,0,0">
+            <!-- 绑定 -->
             <RadioButton Content="加工中心" IsChecked="True" Style="{StaticResource NavButtonStyle}"
                          Command="{Binding NavCommand}"
                          CommandParameter="0"/>
@@ -159,7 +160,8 @@
             </Grid.ColumnDefinitions>
 
             <!--第一列: device avatar-->
-            <c:DeviceBackground Source="../Assets/Images/Devices/d_1.png"/>
+            <c:DeviceBackground Source="{Binding CurrentImage}"
+                                 Margin="0,10,0,20"/>
 
             <!--第二列-->
             <Border BorderThickness="0,1" Grid.Column="1" Margin="0,10,0,10">
